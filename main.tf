@@ -53,12 +53,12 @@ resource "vsphere_virtual_machine" "vm" {
         template_uuid = "${data.vsphere_virtual_machine.template.id}"
 
         customize {
-#            windows_options {
-#                computer_name  = "SPEQXVDICATH${1 + count.index}"
+            windows_options {
+                computer_name  = "Windows-TesteH${1 + count.index}"
 #                join_domain = "catho.local"
 #	              domain_admin_user = "jalvesadm"
 #	              domain_admin_password = "Mutant@2020"
-#            }
+            }
         
             network_interface {
             ipv4_address = "10.221.150.10${1 + count.index}"
