@@ -55,7 +55,9 @@ resource "vsphere_virtual_machine" "vm" {
         customize {
             windows_options {
                 computer_name  = "Windows-TesteH${1 + count.index}"
-#                join_domain = "catho.local"
+                workgroup      = "home"
+                admin_password = "P@ssw0rd"
+#               join_domain = "catho.local"
 #	              domain_admin_user = "jalvesadm"
 #	              domain_admin_password = "Mutant@2020"
             }
