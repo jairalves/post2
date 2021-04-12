@@ -67,7 +67,7 @@ resource "vsphere_virtual_machine" "vm" {
             ipv4_netmask = 24
             #dns_server_list = ["10.125.1.177"]
             }
-            ipv4_gateway = "10.221.150.1"
+            ipv4_gateway = "10.221.150.254"
         }    
     }
 }
