@@ -57,15 +57,15 @@ resource "vsphere_virtual_machine" "vm" {
                 computer_name  = "Windows-TesteH${1 + count.index}"
                 workgroup      = "home"
                 admin_password = "P@ssw0rd"
-#               join_domain = "catho.local"
-#	              domain_admin_user = "jalvesadm"
-#	              domain_admin_password = "Mutant@2020"
+                join_domain = "lab.com"
+	              domain_admin_user = "administrator"
+	              domain_admin_password = "P@ssw0rd"
             }
         
             network_interface {
             ipv4_address = "10.221.150.10${1 + count.index}"
             ipv4_netmask = 24
-            #dns_server_list = ["10.125.1.177"]
+            dns_server_list = ["10.221.150.8"]
             }
             ipv4_gateway = "10.221.150.254"
         }    
