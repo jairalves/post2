@@ -22,14 +22,14 @@ data "vsphere_network" "network" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 data "vsphere_virtual_machine" "template" {
-  name          = "Win2016"
+  name          = "Win2016_Update"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 resource "vsphere_virtual_machine" "vm" {
 
     count            = "1"
-    name             = "Windows-TesteO${count.index + 1}"
+    name             = "Windows-Teste0${count.index + 1}"
     folder           = "Teste-TF"
     resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
     datastore_id     = "${data.vsphere_datastore.datastore.id}"
@@ -54,7 +54,7 @@ resource "vsphere_virtual_machine" "vm" {
 
         customize {
             windows_options {
-                computer_name  = "Windows-TesteH${1 + count.index}"
+                computer_name  = "Windows-Teste0${1 + count.index}"
                 admin_password = "P@ssw0rd"
                 join_domain = "lab.com"
 	              domain_admin_user = "administrator"
