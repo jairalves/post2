@@ -22,7 +22,7 @@ data "vsphere_network" "network" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 data "vsphere_virtual_machine" "template" {
-  name          = "Win2016_Update"
+  name          = "Win2019_Update"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
