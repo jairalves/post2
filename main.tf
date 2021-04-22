@@ -60,6 +60,7 @@ resource "vsphere_virtual_machine" "vm" {
 	              domain_admin_user = "administrator"
 	              domain_admin_password = "P@ssw0rd"
             }
+            timeout              = 30
         
             network_interface {
             ipv4_address = "10.221.150.10${1 + count.index}"
